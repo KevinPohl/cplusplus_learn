@@ -35,8 +35,6 @@ int main()
         << "\n Words: " << nWord
         << "\n Whitespace Characters: " << nSpace
         << endl;
-    
-    
 
     return 0;
 } // end of main
