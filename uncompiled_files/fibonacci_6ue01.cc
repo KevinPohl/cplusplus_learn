@@ -1,13 +1,23 @@
 #include <iostream>
 #include <iomanip>
+#include <string>
+#include "stay_alive.h"
 using namespace std;
 
+// void stay_alive(){
+//     std::cout << "\n<any key to close>\n";
+//     std::cin.ignore();
+//     std::string str;
+//     std::getline(std::cin, str);
+// }
+
+// this namespace is there to hide the method from outside usage
+namespace {
 void throw_error(){
     cout << "an error occured, good luck" << endl;
 }
-
-int main(){
-    
+} // namespace
+int main(){    
     int max;
 
     cout << "Create a Fibonacci up until which value?\nPlease insert an integer: " << endl;
@@ -34,7 +44,6 @@ int main(){
         ++i;
     }
 
-    cout << "<any key to close>\n"; //  << endl;
-    cin.get(), cin.get();
+    stay_alive(true);
     return 0;
 }
