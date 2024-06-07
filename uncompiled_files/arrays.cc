@@ -71,6 +71,32 @@ for(unsigned long long i = 0; i < vect1.size(); i++){
         std::cout << " " << vect1[i] << std::endl;
 }
 
+
+// test vector of vector with different types - not possible with std::vector
+
+std::vector<int> vect_b {1,2,3,4};
+
+// std::vector<std::string> vect_c {"abc","def","a","de","ab"};
+std::vector<int> vect_c {15,14,13,12,11};
+
+std::vector<std::vector<int>> vect_a;
+
+vect_a.push_back(vect_b);
+vect_a.push_back(vect_c);
+
+std::cout << "size vect_a   : " << vect_a.size() << std::endl;
+std::cout << "size vect_a[0]: " << vect_a[0].size() << std::endl;
+std::cout << "size vect_a[1]: " << vect_a[1].size() << std::endl;
+
+// walk a 2d array regardless of dim sizes
+for(unsigned long long i=0; i<vect_a.size(); i++){
+    for(unsigned long long j=0; j<vect_a[i].size(); j++){
+        std::cout
+            << "vector vect_a[" << i << "][" << j << "]: " // vector vect_a[0][0]: 
+            << vect_a[i][j] << std::endl;
+    }
+}
+
 stay_alive();
 return 0;
 } // end main
