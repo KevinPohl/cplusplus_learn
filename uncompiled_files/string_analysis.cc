@@ -16,7 +16,7 @@ int main()
     unsigned int i, // Index
     nSpace = 0, // count whitespace chars
     nWord = 0; // count words
-    bool fSpace = true; // flag whitepace chars
+    bool fSpace = true; // flag whitespace chars
     for( i = 0; i < text.length(); ++i)
     {
         if(isspace(text[i]) ) {// check if whitespace
