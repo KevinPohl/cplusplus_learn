@@ -1,4 +1,5 @@
 #include <iostream>
+#include <tuple>
 #include <array>
 #include <vector>
 
@@ -96,6 +97,48 @@ for(unsigned long long i=0; i<vect_a.size(); i++){
             << vect_a[i][j] << std::endl;
     }
 }
+
+// example for tuple building
+std::vector<std::string> categories {
+    "sentence count",
+    "word count",
+    "letter count",
+    "numerical count",
+    "whitespace count",
+    "punctuation count",
+    "mean letters per word"
+    };
+
+std::vector<float> values {
+    (float)48,
+    (float)20,
+    (float)104,
+    (float)1,
+    (float)19,
+    (float)3,
+    (float)104/(float)20
+    };
+
+// walk the 2 vectors concurrently
+for(unsigned long long i=0; i<values.size(); i++){
+    // 0: sentence count | 14 | 1 
+    std::cout << i << ": "
+        << categories[i] << " | "
+        << categories[i].length() << " | "
+        << values[i] << std::endl;
+}
+
+std::tuple<decltype(categories), decltype(values)> data = make_tuple(categories, values);
+unsigned long long int tsize = std::tuple_size<decltype(data)>::value;
+std::cout << "tsize: " << tsize << std::endl;
+for (unsigned long long int i; i < tsize; i++){}
+
+// // some error with std::get
+// for (unsigned long long i; i < tsize; i++){
+// decltype(categories) abc = std::get<i>(data);
+// for (unsigned long long j; j < abc; j++){
+// } // end for abc
+// } // end for tsize
 
 stay_alive();
 return 0;
