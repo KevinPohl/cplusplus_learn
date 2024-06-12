@@ -64,6 +64,8 @@ s1.replace(3, 1, "");
 s1.replace(4, 1, "r");
 std::cout << std::setw(WIDTH) << "erased via replace: " << s1 << std::endl;
 
+std::cout << std::setw(WIDTH) << "substring: " << s1.substr(0, 3) << std::endl;
+
 
 return 0;
 }
