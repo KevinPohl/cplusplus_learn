@@ -1,0 +1,7 @@
+some sentences with and without e+i for testing
+heist, this line should appear
+hestia, this line shouldn't
+e+i alone should not suffice
+as well as e&i
+but if it appears in a word like leiden, that should be pulled out
+
