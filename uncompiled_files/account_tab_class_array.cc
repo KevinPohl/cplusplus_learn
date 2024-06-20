@@ -12,7 +12,7 @@ Account accountTab[] =
     Account(), // Default-Konstruktor
     giro // Konto(giro)
 };
-int anz = sizeof(accountTab) / sizeof(Account);
+int cnt = sizeof(accountTab) / sizeof(Account);
 int main()
 {
     // set some values
@@ -21,7 +21,7 @@ int main()
     accountTab[2] = Account("Traurig, Otto", 727003, 200.00);
     cout << "The accounts of table:" << endl;
     
-    for(int i = 0; i < anz; ++i)
+    for(int i = 0; i < cnt; ++i)
     {
         accountTab[i].display();
         if(i % 3 == 2)
