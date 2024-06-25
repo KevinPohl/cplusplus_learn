@@ -1,35 +1,6 @@
 //------------------------------------------------------------------------------
-#include <iostream>
-#include <fstream> // std::ifstream and std::ofstream
-#include <string> // getline()
-#include <vector>
-#include <algorithm>
+#include "employee_list_tpl3.h"
 
-#ifndef EMPLOYEELIST_H
-#define EMPLOYEELIST_H
-
-struct employee_t
-{
-    std::string name;
-    float salary;
-};
-
-typedef std::vector<employee_t> empv_t;
-
-class EmployeeList
-{
-    private:
-        empv_t& employeeList;
-
-    public:
-        EmployeeList();
-
-
-};
-
-#endif // EMPLOYEELIST_H
-
-//------------------------------------------------------------------------------
 void sort_by_salary(empv_t& employeeList)
 {
     // sorts employeeList by salary descending
@@ -116,16 +87,4 @@ void search_salary(empv_t& employeeList, const std::string& name)
         }
     }
     std::cout << "\nEmployee " << name << " not found." << std::endl;
-}
-
-//------------------------------------------------------------------------------
-int main()
-{
-    empv_t elist;
-    read_employee_data(elist, "tpl3_data.csv");
-    sort_by_salary(elist);
-    display_employee_list(elist);
-    search_salary(elist, "John Doe");
-    search_salary(elist, "Jane Doe");
-    return 0;
 }
