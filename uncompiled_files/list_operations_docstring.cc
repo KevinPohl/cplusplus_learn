@@ -4,6 +4,10 @@
 #include <iostream>
 // using namespace std;
 
+/** \var typedef std::list<int> INTLIST
+ * \brief A type definition for a typedef.
+ * Details.
+*/
 typedef std::list<int> INTLIST;
 
 /**
